@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login/Signup Form (Dummy) -->
+        <div class="auth-form" id="authForm">
+            <h2>Welcome to Intern Portal</h2>
+            <form id="loginForm">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p class="toggle-auth">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+            </form>
+            <form id="signupForm" style="display: none;">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+                <p class="toggle-auth">Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </form>
+        </div>
+
+        <!-- Dashboard (Hidden by default) -->
+        <div class="dashboard" id="dashboard" style="display: none;">
+            <header>
+                <h1>Intern Dashboard</h1>
+                <button id="logoutBtn">Logout</button>
+            </header>
+
+            <div class="user-info">
+                <h2>Welcome, <span id="internName">Loading...</span>!</h2>
+                <p>Your referral code: <strong id="referralCode">Loading...</strong></p>
+                <div class="donation-box">
+                    <h3>Total Donations Raised</h3>
+                    <p class="donation-amount">$<span id="donationAmount">0</span></p>
+                </div>
+            </div>
+
+            <div class="rewards-section">
+                <h2>Your Rewards</h2>
+                <div class="rewards-grid">
+                    <div class="reward-card">
+                        <div class="reward-icon">🏆</div>
+                        <h3>Bronze Badge</h3>
+                        <p>Earned at $100</p>
+                        <button disabled>Unlocked</button>
+                    </div>
+                    <div class="reward-card">
+                        <div class="reward-icon">⭐</div>
+                        <h3>Silver Badge</h3>
+                        <p>Earn at $500</p>
+                        <button>Locked</button>
+                    </div>
+                    <div class="reward-card">
+                        <div class="reward-icon">💎</div>
+                        <h3>Gold Badge</h3>
+                        <p>Earn at $1000</p>
+                        <button>Locked</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leaderboard-link">
+                <a href="#" id="showLeaderboard">View Leaderboard →</a>
+            </div>
+        </div>
+
+        <!-- Leaderboard (Hidden by default) -->
+        <div class="leaderboard" id="leaderboard" style="display: none;">
+            <header>
+                <h1>Leaderboard</h1>
+                <button id="backToDashboard">Back to Dashboard</button>
+            </header>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Referral Code</th>
+                        <th>Amount Raised</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
